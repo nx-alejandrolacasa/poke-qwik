@@ -2,7 +2,7 @@
   "name": "poke-qwik",
   "description": "Pokémon app built with Qwik",
   "engines": {
-    "node": ">=15.0.0"
+    "node": ">=18.0.0"
   },
   "private": true,
   "trustedDependencies": [

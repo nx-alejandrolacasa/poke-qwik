@@ -19,8 +19,6 @@ export const usePokemon = routeLoader$<Pokemon>(async (requestEvent) => {
 export default component$(() => {
   const pokemon = usePokemon()
 
-  console.log({ pokemon })
-
   if (!pokemon.value) {
     return <div>Loading...</div>
   }
