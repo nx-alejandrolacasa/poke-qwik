@@ -29,7 +29,7 @@ export default component$(() => {
 })
 
 export const head: DocumentHead = {
-  title: 'Pokémon Qwik',
+  title: 'PokéQwik - Home',
   meta: [
     {
       name: 'description',

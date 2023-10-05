@@ -1,20 +1,34 @@
-import { fetchPokemonByName, getPokemonImage } from '~/utils/pokemon.utils'
+import {
+  fetchPokemonByName,
+  getPokemonImage,
+  getPokemonName,
+} from '~/utils/pokemon.utils'
+import type { DocumentHead } from '@builder.io/qwik-city'
 import { routeLoader$ } from '@builder.io/qwik-city'
 import type { Pokemon } from '~/types'
 import { component$ } from '@builder.io/qwik'
 import { Image } from '@unpic/qwik'
 
-// export function generateMetadata({ params }: { params: { name: string } }) {
-//   const { name } = params
-//   return {
-//     title: `PokéNext - ${getPokemonName(name)}`,
-//     description: 'Pokémon app developed with Next.js',
-//   }
-// }
-
 export const usePokemon = routeLoader$<Pokemon>(async (requestEvent) => {
   return await fetchPokemonByName(requestEvent.params.name)
 })
+
+export const head: DocumentHead = ({ resolveValue, params }) => {
+  const pokemon = resolveValue(usePokemon)
+  return {
+    title: `PokéQwik - ${getPokemonName(pokemon.name)}`,
+    meta: [
+      {
+        name: 'description',
+        content: 'Pokémon app developed with Qwik ⚡',
+      },
+      {
+        name: 'name',
+        content: params.name,
+      },
+    ],
+  }
+}
 
 export default component$(() => {
   const pokemon = usePokemon()
