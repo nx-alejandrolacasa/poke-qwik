@@ -94,7 +94,7 @@ yarn dev
 
 ## ☁️ Deploy
 
-`[Pokémon Qwik @ Vercel](https://nx-poke-qwik.vercel.app/)`
+[Pokémon Qwik @ Vercel](https://nx-poke-qwik.vercel.app/)
 
 ## 📄 License
 
