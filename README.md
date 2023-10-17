@@ -1,109 +1,110 @@
-# Qwik City App ⚡️
+<p align="center">
+<a href=https://github.com/nx-alejandrolacasa/poke-qwik target="_blank">
+<img src='https://github.com/nx-alejandrolacasa/poke-next/raw/main/public/screenshot.png' width="100%" alt="Banner" />
+</a>
+</p>
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
 
----
 
-## Project Structure
+<p align="center">
+<img src="https://img.shields.io/github/languages/code-size/nx-alejandrolacasa/poke-qwik" alt="GitHub code size in bytes" />
+<img src="https://img.shields.io/github/last-commit/nx-alejandrolacasa/poke-qwik" alt="GitHub last commit" />
+<img src="https://img.shields.io/github/commit-activity/m/nx-alejandrolacasa/poke-qwik" alt="GitHub commit activity month" />
+<img src="https://img.shields.io/github/license/nx-alejandrolacasa/poke-qwik" alt="GitHub license" />
+</p>
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+<p></p>
+<p></p>
 
-Inside your project, you'll see the following directory structure:
+# 📌 Overview
 
+Poke-Qwik: Pokémon app built with Qwik, leveraging essential dependencies like Qwik, Builder.io, TypeScript, Tailwind CSS, and Vite.
+
+## 🔍 Table of Contents
+
+* [📝 Project Summary](#project-summary)
+
+* [💻 Stack](#stack)
+
+* [⚙️ Setting Up](#setting-up)
+
+* [🚀 Run Locally](#run-locally)
+
+* [🙌 Contributors](#contributors)
+
+* [☁️ Deploy](#deploy)
+
+* [📄 License](#license)
+
+
+## 📝 Project Summary
+
+- [src](src): Main source code directory for the project.
+- [src/components](src/components): Contains reusable components used throughout the application.
+- [src/routes](src/routes): Handles routing and navigation within the application.
+- [src/utils](src/utils): Houses utility functions and helper files.
+- [public](public): Contains static files and assets used in the application.
+- [src/components/Footer](src/components/Footer): Footer component for displaying footer content.
+- [src/components/Header](src/components/Header): Header component for displaying header content.
+- [src/components/PokemonTile](src/components/PokemonTile): Component for displaying individual Pokemon tiles.
+- [src/routes/pokedex](src/routes/pokedex): Handles the Pokedex route and related functionality.
+- [src/routes/pokemon](src/routes/pokemon): Handles the Pokemon route and related functionality.
+
+## 💻 Stack
+
+- [qwik](https://github.com/unpic/qwik): A lightweight framework for building web applications with TypeScript.
+- [typescript](https://www.typescriptlang.org/): A superset of JavaScript that adds static typing to the language.
+- [eslint](https://eslint.org/): A pluggable linting utility for JavaScript and TypeScript.
+- [tailwindcss](https://tailwindcss.com/): A utility-first CSS framework for quickly building custom designs.
+- [vite](https://vitejs.dev/): A fast development server and build tool for modern web applications.
+- [undici](https://github.com/nodejs/undici): An HTTP/1.1 client implementation for Node.js.
+- [vercel](https://vercel.com/): A cloud platform for static sites and serverless functions.
+- [prettier](https://prettier.io/): An opinionated code formatter that enforces consistent code style.
+
+## ⚙️ Setting Up
+
+#### Your Environment Variable
+
+🙅🏻‍♂️ No env vars required!
+
+## 🚀 Run Locally
+1.Clone the poke-qwik repository:
+```sh
+git clone https://github.com/nx-alejandrolacasa/poke-qwik
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+2.Install the dependencies with one of the package managers listed below:
+```bash
+pnpm install
+bun install
+npm install
+yarn install
 ```
-
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
-
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `npm run qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
-
-```shell
-npm run qwik add # or `yarn qwik add`
-```
-
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `yarn start`
-```
-
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-npm run preview # or `yarn preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-npm run build # or `yarn build`
-```
-
-## Vercel Edge
-
-This starter site is configured to deploy to [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions), which means it will be rendered at an edge location near to your users.
-
-## Installation
-
-The adaptor will add a new `vite.config.ts` within the `adapters/` directory, and a new entry file will be created, such as:
-
-```
-└── adapters/
-    └── vercel-edge/
-        └── vite.config.ts
-└── src/
-    └── entry.vercel-edge.tsx
-```
-
-Additionally, within the `package.json`, the `build.server` script will be updated with the Vercel Edge build.
-
-## Production build
-
-To build the application for production, use the `build` command, this command will automatically run `npm run build.server` and `npm run build.client`:
-
-```shell
-npm run build
+3.Start the development mode:
+```bash
+pnpm dev
+bun dev
+npm run dev
+yarn dev
 ```
 
-[Read the full guide here](https://github.com/BuilderIO/qwik/blob/main/starters/adapters/vercel-edge/README.md)
+## 🙌 Contributors
+<a href="https://github.com/nx-alejandrolacasa/poke-qwik/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=nx-alejandrolacasa/poke-qwik" />
+</a>
 
-## Dev deploy
+## ☁️ Deploy
 
-To deploy the application for development:
+`[Pokémon Qwik @ Vercel](https://nx-poke-qwik.vercel.app/)`
 
-```shell
-npm run deploy
-```
+## 📄 License
 
-Notice that you might need a [Vercel account](https://docs.Vercel.com/get-started/) in order to complete this step!
+MIT License
 
-## Production deploy
+Copyright (c) 2023 Alejandro G. Lacasa
 
-The project is ready to be deployed to Vercel. However, you will need to create a git repository and push the code to it.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-You can [deploy your site to Vercel](https://vercel.com/docs/concepts/deployments/overview) either via a Git provider integration or through the Vercel CLI.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
